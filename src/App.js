@@ -12,7 +12,13 @@ function App() {
       <input  id="todoInput" type="text"></input><span> </span>
       <button >Add</button>
       <div>Your To Do List: </div>
-     
+     {
+       todoList.map((item)=>(
+         <div><input type="checkbox"></input>{item}
+         </div>
+
+       ))
+     }
        
     </div>
   );
