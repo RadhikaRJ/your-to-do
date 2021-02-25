@@ -13,8 +13,11 @@ function App() {
     <div className="App">
       <h1>This is Your To Do List!</h1>
       <label>To do: </label>
-      <input onChange={(e)=>setCurrentInputValue(e.target.value)} type="text"></input><span> </span>
-      <button onClick={()=>setTodoList(todoList.concat(currentInputValue))} >Add</button><span> </span>
+      <input onChange={(e)=>setCurrentInputValue(e.target.value) } id="todoinput" type="text"></input><span> </span>
+      <button onClick={()=>{
+        setTodoList(todoList.concat(currentInputValue))
+       document.getElementById('todoinput').value=""; //clear input box after appending item
+        }} >Add</button><span> </span>
       <button onClick={()=>setTodoList([])}>Clear</button>
       <div>Your To Do List: </div>
      {
